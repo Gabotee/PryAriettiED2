@@ -27,5 +27,11 @@ namespace PryAriettiED2
         {
             this.Close(); 
         }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstructuraDinamicaLinealCola VentanaCola = new FrmEstructuraDinamicaLinealCola();
+            VentanaCola.ShowDialog();
+        }
     }
 }
