@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEstructuraDinamicaLinealCola));
             this.pbImagen1 = new System.Windows.Forms.PictureBox();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTramite = new System.Windows.Forms.TextBox();
             this.cmdAceptar = new System.Windows.Forms.Button();
+            this.txtTramite = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.txtMostrarTramite = new System.Windows.Forms.TextBox();
@@ -47,11 +47,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstCola = new System.Windows.Forms.ListBox();
             this.DgvMostrar = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstCola = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen1)).BeginInit();
             this.mrcNuevoElemento.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -85,23 +85,36 @@
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
-            // label1
+            // cmdAceptar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
+            this.cmdAceptar.Location = new System.Drawing.Point(50, 113);
+            this.cmdAceptar.Name = "cmdAceptar";
+            this.cmdAceptar.Size = new System.Drawing.Size(97, 27);
+            this.cmdAceptar.TabIndex = 2;
+            this.cmdAceptar.Text = "Agregar";
+            this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
-            // label2
+            // txtTramite
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.txtTramite.Location = new System.Drawing.Point(82, 77);
+            this.txtTramite.Name = "txtTramite";
+            this.txtTramite.Size = new System.Drawing.Size(100, 20);
+            this.txtTramite.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(82, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(113, 25);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(69, 20);
+            this.txtCodigo.TabIndex = 3;
             // 
             // label3
             // 
@@ -112,35 +125,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tramite";
             // 
-            // txtCodigo
+            // label2
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(113, 25);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(69, 20);
-            this.txtCodigo.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
             // 
-            // txtNombre
+            // label1
             // 
-            this.txtNombre.Location = new System.Drawing.Point(82, 51);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // txtTramite
-            // 
-            this.txtTramite.Location = new System.Drawing.Point(82, 77);
-            this.txtTramite.Name = "txtTramite";
-            this.txtTramite.Size = new System.Drawing.Size(100, 20);
-            this.txtTramite.TabIndex = 5;
-            // 
-            // cmdAceptar
-            // 
-            this.cmdAceptar.Location = new System.Drawing.Point(47, 103);
-            this.cmdAceptar.Name = "cmdAceptar";
-            this.cmdAceptar.Size = new System.Drawing.Size(97, 27);
-            this.cmdAceptar.TabIndex = 2;
-            this.cmdAceptar.Text = "Agregar";
-            this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
             // groupBox1
             // 
@@ -160,7 +161,7 @@
             // 
             // cmdEliminar
             // 
-            this.cmdEliminar.Location = new System.Drawing.Point(47, 103);
+            this.cmdEliminar.Location = new System.Drawing.Point(52, 113);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(97, 27);
             this.cmdEliminar.TabIndex = 2;
@@ -225,17 +226,12 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado en una Lista y grilla";
-            // 
-            // lstCola
-            // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(17, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(120, 186);
-            this.lstCola.TabIndex = 0;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // DgvMostrar
             // 
+            this.DgvMostrar.AllowUserToAddRows = false;
+            this.DgvMostrar.AllowUserToDeleteRows = false;
             this.DgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvMostrar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -243,6 +239,7 @@
             this.Column3});
             this.DgvMostrar.Location = new System.Drawing.Point(155, 19);
             this.DgvMostrar.Name = "DgvMostrar";
+            this.DgvMostrar.ReadOnly = true;
             this.DgvMostrar.Size = new System.Drawing.Size(397, 186);
             this.DgvMostrar.TabIndex = 1;
             // 
@@ -261,6 +258,14 @@
             this.Column3.HeaderText = "Tramite";
             this.Column3.Name = "Column3";
             // 
+            // lstCola
+            // 
+            this.lstCola.FormattingEnabled = true;
+            this.lstCola.Location = new System.Drawing.Point(17, 19);
+            this.lstCola.Name = "lstCola";
+            this.lstCola.Size = new System.Drawing.Size(120, 186);
+            this.lstCola.TabIndex = 0;
+            // 
             // FrmEstructuraDinamicaLinealCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +277,7 @@
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmEstructuraDinamicaLinealCola";
             this.Text = "Estructura dinamica lineal";
+            this.Load += new System.EventHandler(this.FrmEstructuraDinamicaLinealCola_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen1)).EndInit();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();

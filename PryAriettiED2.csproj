@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cola.cs" />
+    <Compile Include="clsCola.cs" />
     <Compile Include="FrmEstructuraDinamicaLinealCola.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +65,7 @@
     <Compile Include="FrmProgramador.Designer.cs">
       <DependentUpon>FrmProgramador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nodo.cs" />
+    <Compile Include="clsNodo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEstructuraDinamicaLinealCola.resx">

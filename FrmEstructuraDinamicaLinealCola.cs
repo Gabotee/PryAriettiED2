@@ -12,9 +12,37 @@ namespace PryAriettiED2
 {
     public partial class FrmEstructuraDinamicaLinealCola : Form
     {
+        clsCola FilaDePersonas = new clsCola();
+
         public FrmEstructuraDinamicaLinealCola()
         {
             InitializeComponent();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmEstructuraDinamicaLinealCola_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmdAceptar_Click(object sender, EventArgs e)
+        {
+            clsNodo ObjNodo = new clsNodo();
+            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            ObjNodo.Nombre = txtNombre.Text;
+            ObjNodo.Tramite = txtTramite.Text;
+
+            FilaDePersonas.Agregar(ObjNodo);
+            FilaDePersonas.Recorrer(DgvMostrar);
+            FilaDePersonas.Recorrer(lstCola);
+
+            txtNombre.Text = "";
+            txtCodigo.Text = "";
+            txtTramite.Text = "";
         }
     }
 }

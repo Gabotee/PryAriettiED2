@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PryAriettiED2
 {
-    internal class Nodo
+    internal class clsNodo
     {
 
         private Int32 cod;
         private string Nom;
         private string Tra;
 
-        private Nodo Sig;
+        private clsNodo Sig;
 
         //Propiedades.. Interactuan con la interfaz.. puede tomar y mostrar datos 
 
@@ -37,7 +37,7 @@ namespace PryAriettiED2
             set { Tra = value; }
         }
 
-        public Nodo Siguiente
+        public clsNodo Siguiente
         {
             get { return Sig; }
             set { Sig = value; }
