@@ -33,5 +33,11 @@ namespace PryAriettiED2
             FrmEstructuraDinamicaLinealCola VentanaCola = new FrmEstructuraDinamicaLinealCola();
             VentanaCola.ShowDialog();
         }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstructuraDinamicaLinealPila VentanaPila = new FrmEstructuraDinamicaLinealPila();
+            VentanaPila.ShowDialog();
+        }
     }
 }
