@@ -167,6 +167,7 @@
             this.cmdEliminar.TabIndex = 2;
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
             // txtMostrarTramite
             // 
@@ -247,16 +248,19 @@
             // 
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Tramite";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // lstCola
             // 
@@ -265,6 +269,7 @@
             this.lstCola.Name = "lstCola";
             this.lstCola.Size = new System.Drawing.Size(120, 186);
             this.lstCola.TabIndex = 0;
+            this.lstCola.SelectedIndexChanged += new System.EventHandler(this.lstPila_SelectedIndexChanged);
             // 
             // FrmEstructuraDinamicaLinealCola
             // 

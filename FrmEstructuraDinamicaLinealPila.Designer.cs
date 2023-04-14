@@ -34,7 +34,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
+            this.lstPila = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.txtMostrarTramite = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.DgvMostrar);
-            this.groupBox2.Controls.Add(this.lstCola);
+            this.groupBox2.Controls.Add(this.lstPila);
             this.groupBox2.Location = new System.Drawing.Point(12, 180);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(570, 224);
@@ -84,6 +84,7 @@
             this.DgvMostrar.ReadOnly = true;
             this.DgvMostrar.Size = new System.Drawing.Size(397, 186);
             this.DgvMostrar.TabIndex = 1;
+            this.DgvMostrar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMostrar_CellContentClick);
             // 
             // Column1
             // 
@@ -103,13 +104,13 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // lstCola
+            // lstPila
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(17, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(120, 186);
-            this.lstCola.TabIndex = 0;
+            this.lstPila.FormattingEnabled = true;
+            this.lstPila.Location = new System.Drawing.Point(17, 19);
+            this.lstPila.Name = "lstPila";
+            this.lstPila.Size = new System.Drawing.Size(120, 186);
+            this.lstPila.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -135,6 +136,7 @@
             this.cmdEliminar.TabIndex = 2;
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
             // txtMostrarTramite
             // 
@@ -208,6 +210,7 @@
             this.cmdAceptar.TabIndex = 2;
             this.cmdAceptar.Text = "Agregar";
             this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
             // txtTramite
             // 
@@ -278,6 +281,7 @@
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmEstructuraDinamicaLinealPila";
             this.Text = "Estructura Dinamica Lineal Pila";
+            this.Load += new System.EventHandler(this.FrmEstructuraDinamicaLinealPila_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -296,7 +300,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.ListBox lstPila;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button cmdEliminar;
         private System.Windows.Forms.TextBox txtMostrarTramite;

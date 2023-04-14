@@ -31,6 +31,7 @@ namespace PryAriettiED2
 
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
+           
             clsNodo ObjNodo = new clsNodo();
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
@@ -43,6 +44,33 @@ namespace PryAriettiED2
             txtNombre.Text = "";
             txtCodigo.Text = "";
             txtTramite.Text = "";
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if (FilaDePersonas.Primero !=null)
+            {
+                txtMostrarCodigo.Text = FilaDePersonas.Primero.Codigo.ToString();
+                txtMostrarNombre.Text = FilaDePersonas.Primero.Nombre;
+                txtMostrarTramite.Text = FilaDePersonas.Primero.Tramite;
+                FilaDePersonas.Eliminar();
+                //Recorrer = Mostrar
+                FilaDePersonas.Recorrer(DgvMostrar);
+                FilaDePersonas.Recorrer(lstCola);
+            }
+            else
+            {
+                txtMostrarCodigo.Text = "";
+                txtMostrarNombre.Text = "";
+                txtMostrarTramite.Text = "";
+                
+            }
+           
+        }
+
+        private void lstPila_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,46 +7,31 @@ using System.Windows.Forms;
 
 namespace PryAriettiED2
 {
-    internal class clsCola
+    internal class clsPila
     {
         public clsNodo Primero;
-        public clsNodo Ultimo;
         public clsNodo Aux;
-         
 
-        public void Agregar(clsNodo Nuevo)
+        public void Agregar(clsNodo nuevo)
         {
-            //si no hay nadie en la cola.. el primero que llega es primero y ultimo.
             if (Primero == null)
             {
-                Primero = Nuevo;
-                Ultimo = Nuevo;
+                Primero = nuevo;
             }
             else
             {
-                
-                Ultimo.Siguiente = Nuevo; // Al ultimo se le engancha el nuevo 
-
-                Ultimo = Nuevo; // El nuevo pasa al ultimo 
+                nuevo.Siguiente = Primero;
+                Primero = nuevo;
             }
+
         }
 
         public void Eliminar()
         {
-            if (Primero == Ultimo)
+            if (Primero != null)
             {
-                // si hay uno solo.. cuando se elimina pasa a no quedar nada
-                Primero = null;
-                Ultimo = null;
+                Primero = Primero.Siguiente;
             }
-            else
-            {
-                //el primero se elimina y el siguiente pasa a ser primero
-                Primero = Primero.Siguiente;  
-
-            }
-
-
         }
 
         public void Recorrer(DataGridView Grilla)
@@ -54,10 +39,10 @@ namespace PryAriettiED2
             Aux = Primero;
 
             Grilla.Rows.Clear();
-            
+
             while (Aux != null)
             {
-                Grilla.Rows.Add(Aux.Codigo,Aux.Nombre,Aux.Tramite);
+                Grilla.Rows.Add(Aux.Codigo, Aux.Nombre, Aux.Tramite);
                 Aux = Aux.Siguiente;
             }
         }
@@ -88,5 +73,8 @@ namespace PryAriettiED2
             }
 
         }
-    }
+
+    }       
+
 }
+    

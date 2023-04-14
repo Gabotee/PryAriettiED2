@@ -47,11 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCola.cs" />
+    <Compile Include="clsPila.cs" />
     <Compile Include="FrmEstructuraDinamicaLinealCola.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEstructuraDinamicaLinealCola.Designer.cs">
       <DependentUpon>FrmEstructuraDinamicaLinealCola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstructuraDinamicaLineaListaSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstructuraDinamicaLineaListaSimple.Designer.cs">
+      <DependentUpon>FrmEstructuraDinamicaLineaListaSimple.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEstructuraDinamicaLinealPila.cs">
       <SubType>Form</SubType>
@@ -76,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEstructuraDinamicaLinealCola.resx">
       <DependentUpon>FrmEstructuraDinamicaLinealCola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstructuraDinamicaLineaListaSimple.resx">
+      <DependentUpon>FrmEstructuraDinamicaLineaListaSimple.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEstructuraDinamicaLinealPila.resx">
       <DependentUpon>FrmEstructuraDinamicaLinealPila.cs</DependentUpon>
