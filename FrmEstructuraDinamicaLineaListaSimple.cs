@@ -13,11 +13,11 @@ namespace PryAriettiED2
     public partial class FrmEstructuraDinamicaLineaListaSimple : Form
     {
         clsListaSimple FilaPersonas = new clsListaSimple();
-       
 
         public FrmEstructuraDinamicaLineaListaSimple()
         {
             InitializeComponent();
+            
         }
 
         private void cmdAceptar_Click(object sender, EventArgs e)
@@ -42,22 +42,21 @@ namespace PryAriettiED2
 
         private void cmdEliminar_Click(object sender, EventArgs e)       
         {
-            clsListaSimple ObjLista = new clsListaSimple();
-
-            if (ObjLista.Primero != null)
+            if (FilaPersonas.Primero != null)
             {
-              
+                cmdEliminar.Enabled = true;
                 int Eliminar = Convert.ToInt32(lstCodigo.Text);
-                ObjLista.Eliminar(Eliminar);
-                ObjLista.Recorrer(DgvMostrar);
-                ObjLista.Recorrer(lstCodigo);
+                FilaPersonas.Eliminar(Eliminar);
+                FilaPersonas.Recorrer(DgvMostrar);
+                FilaPersonas.Recorrer(lstCodigo);
 
             }
             else
             {
                 MessageBox.Show("Lista Vacia");
             }
-            lstCodigo.Enabled = false;
+            
+            
 
 
         }

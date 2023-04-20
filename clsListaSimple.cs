@@ -12,6 +12,7 @@ namespace PryAriettiED2
         public clsNodo Primero;
         clsNodo Codigo;
         clsNodo Aux;
+        clsNodo Anterior;
 
 
 
@@ -53,13 +54,15 @@ namespace PryAriettiED2
 
         public void Eliminar(Int32 Cod)
         {
+            
+
             if (Primero.Codigo == Cod)
             {
                 Primero = Primero.Siguiente;
             }
             else
             {
-                clsNodo Anterior = Primero;
+                Anterior = Primero;
                 clsNodo Aux = Primero;
 
                 while (Aux.Codigo != Cod)
