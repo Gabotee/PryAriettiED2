@@ -13,7 +13,7 @@ namespace PryAriettiED2
     public partial class FrmEstructuraDinamicaLinealPila : Form
     {
         clsPila FilaDePersonas = new clsPila();
-
+        
 
         public FrmEstructuraDinamicaLinealPila()
         {
@@ -39,6 +39,7 @@ namespace PryAriettiED2
             txtNombre.Text = "";
             txtCodigo.Text = "";
             txtTramite.Text = "";
+
         }
 
         private void FrmEstructuraDinamicaLinealPila_Load(object sender, EventArgs e)
