@@ -281,6 +281,7 @@
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmEstructuraDinamicaLinealCola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura dinamica lineal";
             this.Load += new System.EventHandler(this.FrmEstructuraDinamicaLinealCola_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen1)).EndInit();

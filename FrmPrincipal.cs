@@ -45,5 +45,11 @@ namespace PryAriettiED2
             FrmEstructuraDinamicaLineaListaSimple VentanaListaSimple = new FrmEstructuraDinamicaLineaListaSimple();
             VentanaListaSimple.ShowDialog();
         }
+
+        private void dobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstructuraDinamicaLinealListaDoble VentanaListaDoble = new FrmEstructuraDinamicaLinealListaDoble();
+            VentanaListaDoble.ShowDialog();
+        }
     }
 }

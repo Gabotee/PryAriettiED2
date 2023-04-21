@@ -14,6 +14,7 @@ namespace PryAriettiED2
         private string Tra;
 
         private clsNodo Sig;
+        private clsNodo Ant;
 
         //Propiedades.. Interactuan con la interfaz.. puede tomar y mostrar datos 
 
@@ -41,6 +42,12 @@ namespace PryAriettiED2
         {
             get { return Sig; }
             set { Sig = value; }
+        }
+
+        public clsNodo Anterior
+        {
+            get { return Ant; }
+            set { Ant = value; }
         }
 
     }

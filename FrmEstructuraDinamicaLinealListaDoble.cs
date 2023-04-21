@@ -10,31 +10,31 @@ using System.Windows.Forms;
 
 namespace PryAriettiED2
 {
-    public partial class FrmEstructuraDinamicaLineaListaSimple : Form
+    public partial class FrmEstructuraDinamicaLinealListaDoble : Form
     {
-        clsListaSimple FilaPersonas = new clsListaSimple();
+        clsListaDoble FilaPersonas = new clsListaDoble();
 
-        public FrmEstructuraDinamicaLineaListaSimple()
+        public FrmEstructuraDinamicaLinealListaDoble()
         {
             InitializeComponent();
-            
+            rbAscendente.Checked = true;
         }
-
-        
 
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
             clsNodo ObjNodo = new clsNodo();
+
             ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
             ObjNodo.Nombre = txtNombre.Text;
             ObjNodo.Tramite = txtTramite.Text;
 
             FilaPersonas.Agregar(ObjNodo);
             FilaPersonas.Recorrer(DgvMostrar);
-            FilaPersonas.Recorrer(lstListaSimple);
+            FilaPersonas.Recorrer(lstListaDoble);
 
             //Llena el combo box
             lstCodigo.Text = "";
+
             FilaPersonas.Recorrer(lstCodigo);
 
             txtNombre.Text = "";
@@ -42,7 +42,21 @@ namespace PryAriettiED2
             txtTramite.Text = "";
         }
 
-        private void cmdEliminar_Click(object sender, EventArgs e)       
+        private void rbAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+            FilaPersonas.Recorrer(lstCodigo);
+            FilaPersonas.Recorrer(DgvMostrar);
+            FilaPersonas.Recorrer(lstListaDoble);
+        }
+
+        private void rbDescendente_CheckedChanged(object sender, EventArgs e)
+        {
+            FilaPersonas.RecorrerDes(lstCodigo);
+            FilaPersonas.RecorrerDes(DgvMostrar);
+            FilaPersonas.RecorrerDes(lstListaDoble);
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
         {
             if (FilaPersonas.Primero != null)
             {
@@ -56,11 +70,8 @@ namespace PryAriettiED2
             else
             {
                 MessageBox.Show("Lista Vacia");
+
             }
-            
-            
-
-
         }
     }
 }

@@ -45,9 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbImagen1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lstCodigo = new System.Windows.Forms.ComboBox();
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.lstCodigo = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
             this.mrcNuevoElemento.SuspendLayout();
@@ -203,6 +203,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Elemento Eliminado";
             // 
+            // lstCodigo
+            // 
+            this.lstCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.lstCodigo.FormattingEnabled = true;
+            this.lstCodigo.Location = new System.Drawing.Point(54, 58);
+            this.lstCodigo.Name = "lstCodigo";
+            this.lstCodigo.Size = new System.Drawing.Size(121, 21);
+            this.lstCodigo.TabIndex = 3;
+            // 
             // cmdEliminar
             // 
             this.cmdEliminar.Location = new System.Drawing.Point(54, 113);
@@ -222,15 +231,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Codigo";
             // 
-            // lstCodigo
-            // 
-            this.lstCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lstCodigo.FormattingEnabled = true;
-            this.lstCodigo.Location = new System.Drawing.Point(54, 58);
-            this.lstCodigo.Name = "lstCodigo";
-            this.lstCodigo.Size = new System.Drawing.Size(121, 21);
-            this.lstCodigo.TabIndex = 3;
-            // 
             // FrmEstructuraDinamicaLineaListaSimple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,6 +241,7 @@
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmEstructuraDinamicaLineaListaSimple";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica Lineal Lista Simple";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).EndInit();
