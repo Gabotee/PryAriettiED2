@@ -22,24 +22,33 @@ namespace PryAriettiED2
 
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
-            clsNodo ObjNodo = new clsNodo();
 
-            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            ObjNodo.Nombre = txtNombre.Text;
-            ObjNodo.Tramite = txtTramite.Text;
+            if (txtCodigo.Text == "" || txtNombre.Text == "" || txtTramite.Text == "")
+            {
+                MessageBox.Show("Porfavor Asegurese de que todos los campos contengan Datos", "Mensaje");
+            }
+            else
+            {
+                clsNodo ObjNodo = new clsNodo();
 
-            FilaPersonas.Agregar(ObjNodo);
-            FilaPersonas.Recorrer(DgvMostrar);
-            FilaPersonas.Recorrer(lstListaDoble);
+                ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+                ObjNodo.Nombre = txtNombre.Text;
+                ObjNodo.Tramite = txtTramite.Text;
 
-            //Llena el combo box
-            lstCodigo.Text = "";
+                FilaPersonas.Agregar(ObjNodo);
+                FilaPersonas.Recorrer(DgvMostrar);
+                FilaPersonas.Recorrer(lstListaDoble);
 
-            FilaPersonas.Recorrer(lstCodigo);
+                // Limpia el combo, por si ya tenia algo cargado.
+                lstCodigo.Text = "";
+                //Llena el combo box
+                FilaPersonas.Recorrer(lstCodigo);
 
-            txtNombre.Text = "";
-            txtCodigo.Text = "";
-            txtTramite.Text = "";
+                txtNombre.Text = "";
+                txtCodigo.Text = "";
+                txtTramite.Text = "";
+            }
+            
         }
 
         private void rbAscendente_CheckedChanged(object sender, EventArgs e)

@@ -27,18 +27,25 @@ namespace PryAriettiED2
 
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
-            clsNodo ObjNodo = new clsNodo();
-            ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
-            ObjNodo.Nombre = txtNombre.Text;
-            ObjNodo.Tramite = txtTramite.Text;
+            if (txtCodigo.Text == "" || txtNombre.Text == "" || txtTramite.Text == "")
+            {
+                MessageBox.Show("Porfavor Asegurese de que todos los campos contengan Datos", "Mensaje");
+            }
+            else
+            {
+                clsNodo ObjNodo = new clsNodo();
+                ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+                ObjNodo.Nombre = txtNombre.Text;
+                ObjNodo.Tramite = txtTramite.Text;
 
-            FilaDePersonas.Agregar(ObjNodo);
-            FilaDePersonas.Recorrer(DgvMostrar);
-            FilaDePersonas.Recorrer(lstPila);
+                FilaDePersonas.Agregar(ObjNodo);
+                FilaDePersonas.Recorrer(DgvMostrar);
+                FilaDePersonas.Recorrer(lstPila);
 
-            txtNombre.Text = "";
-            txtCodigo.Text = "";
-            txtTramite.Text = "";
+                txtNombre.Text = "";
+                txtCodigo.Text = "";
+                txtTramite.Text = "";
+            }
 
         }
 
@@ -67,5 +74,9 @@ namespace PryAriettiED2
 
             }
         }
+
+        
+
+
     }
 }
