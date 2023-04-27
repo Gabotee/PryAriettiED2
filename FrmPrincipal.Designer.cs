@@ -40,7 +40,6 @@
             this.dobleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.binarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +130,6 @@
             // 
             this.noLinealesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arbolToolStripMenuItem,
-            this.binarioToolStripMenuItem,
             this.grafoToolStripMenuItem});
             this.noLinealesToolStripMenuItem.Name = "noLinealesToolStripMenuItem";
             this.noLinealesToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
@@ -140,19 +138,14 @@
             // arbolToolStripMenuItem
             // 
             this.arbolToolStripMenuItem.Name = "arbolToolStripMenuItem";
-            this.arbolToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.arbolToolStripMenuItem.Text = "Arbol";
-            // 
-            // binarioToolStripMenuItem
-            // 
-            this.binarioToolStripMenuItem.Name = "binarioToolStripMenuItem";
-            this.binarioToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.binarioToolStripMenuItem.Text = "Binario";
+            this.arbolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arbolToolStripMenuItem.Text = "Arbol Binario";
+            this.arbolToolStripMenuItem.Click += new System.EventHandler(this.arbolToolStripMenuItem_Click);
             // 
             // grafoToolStripMenuItem
             // 
             this.grafoToolStripMenuItem.Name = "grafoToolStripMenuItem";
-            this.grafoToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.grafoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grafoToolStripMenuItem.Text = "Grafo";
             // 
             // FrmPrincipal
@@ -187,7 +180,6 @@
         private System.Windows.Forms.ToolStripMenuItem simpleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dobleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arbolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem binarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafoToolStripMenuItem;
     }
 }

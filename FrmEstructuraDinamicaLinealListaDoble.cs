@@ -13,6 +13,7 @@ namespace PryAriettiED2
     public partial class FrmEstructuraDinamicaLinealListaDoble : Form
     {
         clsListaDoble FilaPersonas = new clsListaDoble();
+        
 
         public FrmEstructuraDinamicaLinealListaDoble()
         {
@@ -67,13 +68,14 @@ namespace PryAriettiED2
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            if (FilaPersonas.Primero != null)
+            if (FilaPersonas.Primero != null && (lstCodigo.Text != ""))
             {
                 cmdEliminar.Enabled = true;
-                int Eliminar = Convert.ToInt32(lstCodigo.Text);
+                int Eliminar = Convert.ToInt32(lstCodigo.SelectedItem);
                 FilaPersonas.Eliminar(Eliminar);
                 FilaPersonas.Recorrer(DgvMostrar);
                 FilaPersonas.Recorrer(lstCodigo);
+                FilaPersonas.Recorrer(lstListaDoble);
 
             }
             else

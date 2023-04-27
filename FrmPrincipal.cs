@@ -51,5 +51,11 @@ namespace PryAriettiED2
             FrmEstructuraDinamicaLinealListaDoble VentanaListaDoble = new FrmEstructuraDinamicaLinealListaDoble();
             VentanaListaDoble.ShowDialog();
         }
+
+        private void arbolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmArbolBinario VentanaArbol = new FrmArbolBinario();
+            VentanaArbol.ShowDialog();
+        }
     }
 }

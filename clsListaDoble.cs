@@ -35,7 +35,7 @@ namespace PryAriettiED2
             }
             else
             {
-                if (Nuevo.Codigo < Primero.Codigo)
+                if (Nuevo.Codigo <= Primero.Codigo)
                 {
                     Nuevo.Siguiente = Primero;
                     Primero.Anterior = Nuevo;
@@ -43,7 +43,7 @@ namespace PryAriettiED2
                 }
                 else
                 {
-                    if (Nuevo.Codigo > Primero.Codigo)
+                    if (Nuevo.Codigo >= Ultimo.Codigo)
                     {
                         Ultimo.Siguiente = Nuevo;
                         Nuevo.Anterior = Ultimo;
@@ -71,14 +71,14 @@ namespace PryAriettiED2
         public void Eliminar(Int32 Cod)
         {
 
-            if (Primero.Codigo == Cod && Ultimo == Primero)
+            if (Primero.Codigo == Cod && Ultimo == Primero) // Pregunta si hay un solo dato.
             {
                 Primero = null;
                 Ultimo = null;
             }
             else
             {
-                if (Primero.Codigo == Cod)
+                if (Primero.Codigo == Cod) 
                 {
                     Primero = Primero.Siguiente;
                     Primero.Anterior = null;
@@ -99,8 +99,9 @@ namespace PryAriettiED2
                             Ant = Aux;
                             Aux = Aux.Siguiente;
                         }
-                        Ant.Siguiente = Aux.Siguiente;
+
                         Aux = Aux.Siguiente;
+                        Ant.Siguiente = Aux;                     
                         Aux.Anterior = Ant;
                     }
                 }
