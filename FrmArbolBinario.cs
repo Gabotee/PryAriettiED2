@@ -16,5 +16,10 @@ namespace PryAriettiED2
         {
             InitializeComponent();
         }
+
+        private void cmdAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

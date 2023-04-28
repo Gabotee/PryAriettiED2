@@ -170,6 +170,7 @@
             this.cmdAceptar.TabIndex = 2;
             this.cmdAceptar.Text = "Agregar";
             this.cmdAceptar.UseVisualStyleBackColor = true;
+            this.cmdAceptar.Click += new System.EventHandler(this.cmdAceptar_Click);
             // 
             // txtTramite
             // 
