@@ -48,11 +48,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pbImagen1 = new System.Windows.Forms.PictureBox();
+            this.mrcRecorrido = new System.Windows.Forms.GroupBox();
+            this.rbPostOrden = new System.Windows.Forms.RadioButton();
+            this.rbPreOrden = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
             this.mrcNuevoElemento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen1)).BeginInit();
+            this.mrcRecorrido.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -62,7 +68,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(383, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 162);
+            this.groupBox1.Size = new System.Drawing.Size(200, 155);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Elemento Eliminado";
@@ -100,7 +106,7 @@
             this.groupBox2.Controls.Add(this.lstArbolBinario);
             this.groupBox2.Location = new System.Drawing.Point(13, 180);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(570, 224);
+            this.groupBox2.Size = new System.Drawing.Size(570, 217);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado en una Lista y grilla";
@@ -117,7 +123,7 @@
             this.DgvMostrar.Location = new System.Drawing.Point(164, 19);
             this.DgvMostrar.Name = "DgvMostrar";
             this.DgvMostrar.ReadOnly = true;
-            this.DgvMostrar.Size = new System.Drawing.Size(397, 186);
+            this.DgvMostrar.Size = new System.Drawing.Size(400, 186);
             this.DgvMostrar.TabIndex = 1;
             // 
             // Column1
@@ -157,7 +163,7 @@
             this.mrcNuevoElemento.Controls.Add(this.label1);
             this.mrcNuevoElemento.Location = new System.Drawing.Point(168, 12);
             this.mrcNuevoElemento.Name = "mrcNuevoElemento";
-            this.mrcNuevoElemento.Size = new System.Drawing.Size(209, 166);
+            this.mrcNuevoElemento.Size = new System.Drawing.Size(209, 159);
             this.mrcNuevoElemento.TabIndex = 17;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
@@ -225,22 +231,85 @@
             this.pbImagen1.Image = ((System.Drawing.Image)(resources.GetObject("pbImagen1.Image")));
             this.pbImagen1.Location = new System.Drawing.Point(13, 12);
             this.pbImagen1.Name = "pbImagen1";
-            this.pbImagen1.Size = new System.Drawing.Size(149, 162);
+            this.pbImagen1.Size = new System.Drawing.Size(149, 155);
             this.pbImagen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen1.TabIndex = 16;
             this.pbImagen1.TabStop = false;
+            // 
+            // mrcRecorrido
+            // 
+            this.mrcRecorrido.Controls.Add(this.rbPostOrden);
+            this.mrcRecorrido.Controls.Add(this.rbPreOrden);
+            this.mrcRecorrido.Controls.Add(this.radioButton2);
+            this.mrcRecorrido.Controls.Add(this.rbOrdenAsc);
+            this.mrcRecorrido.Location = new System.Drawing.Point(589, 180);
+            this.mrcRecorrido.Name = "mrcRecorrido";
+            this.mrcRecorrido.Size = new System.Drawing.Size(125, 130);
+            this.mrcRecorrido.TabIndex = 20;
+            this.mrcRecorrido.TabStop = false;
+            this.mrcRecorrido.Text = "Recorrido";
+            // 
+            // rbPostOrden
+            // 
+            this.rbPostOrden.AutoSize = true;
+            this.rbPostOrden.Location = new System.Drawing.Point(0, 91);
+            this.rbPostOrden.Name = "rbPostOrden";
+            this.rbPostOrden.Size = new System.Drawing.Size(75, 17);
+            this.rbPostOrden.TabIndex = 3;
+            this.rbPostOrden.TabStop = true;
+            this.rbPostOrden.Text = "PostOrden";
+            this.rbPostOrden.UseVisualStyleBackColor = true;
+            this.rbPostOrden.CheckedChanged += new System.EventHandler(this.rbPostOrden_CheckedChanged);
+            // 
+            // rbPreOrden
+            // 
+            this.rbPreOrden.AutoSize = true;
+            this.rbPreOrden.Location = new System.Drawing.Point(0, 68);
+            this.rbPreOrden.Name = "rbPreOrden";
+            this.rbPreOrden.Size = new System.Drawing.Size(70, 17);
+            this.rbPreOrden.TabIndex = 2;
+            this.rbPreOrden.TabStop = true;
+            this.rbPreOrden.Text = "PreOrden";
+            this.rbPreOrden.UseVisualStyleBackColor = true;
+            this.rbPreOrden.CheckedChanged += new System.EventHandler(this.rbPreOrden_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(0, 46);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(127, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "InOrdenDescendente";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // rbOrdenAsc
+            // 
+            this.rbOrdenAsc.AutoSize = true;
+            this.rbOrdenAsc.Location = new System.Drawing.Point(0, 23);
+            this.rbOrdenAsc.Name = "rbOrdenAsc";
+            this.rbOrdenAsc.Size = new System.Drawing.Size(120, 17);
+            this.rbOrdenAsc.TabIndex = 0;
+            this.rbOrdenAsc.TabStop = true;
+            this.rbOrdenAsc.Text = "InOrdenAscendente";
+            this.rbOrdenAsc.UseVisualStyleBackColor = true;
+            this.rbOrdenAsc.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // FrmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 429);
+            this.ClientSize = new System.Drawing.Size(726, 511);
+            this.Controls.Add(this.mrcRecorrido);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmArbolBinario";
             this.Text = "Arbol Binario";
+            this.Load += new System.EventHandler(this.FrmArbolBinario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -248,6 +317,8 @@
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen1)).EndInit();
+            this.mrcRecorrido.ResumeLayout(false);
+            this.mrcRecorrido.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +343,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbImagen1;
+        private System.Windows.Forms.GroupBox mrcRecorrido;
+        private System.Windows.Forms.RadioButton rbPostOrden;
+        private System.Windows.Forms.RadioButton rbPreOrden;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbOrdenAsc;
     }
 }

@@ -283,6 +283,7 @@
             this.Name = "FrmEstructuraDinamicaLinealListaDoble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica Lineal Lista Doble";
+            this.Load += new System.EventHandler(this.FrmEstructuraDinamicaLinealListaDoble_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).EndInit();
             this.mrcNuevoElemento.ResumeLayout(false);

@@ -73,25 +73,109 @@ namespace PryAriettiED2
         // InOrden I-R-D
         // PreOrden R-I-D
         // PostOrden I-D-R
-        public void Recorrer(DataGridView Grilla)
+
+        // Recorrer Ascendente 
+        public void RecorrerInOrdenAsc(DataGridView Grilla)
         {
-           
+            Grilla.Rows.Clear();
+            InOrdenAsc(Grilla, Raiz);
 
 
         }
 
-        public void Recorrer(ListBox Lista)
+        public void RecorrerInOrdenAsc(ListBox Lista)
         {
             Lista.Items.Clear();
             InOrdenAsc(Lista,Raiz);
 
         }
 
-        public void Recorrer(ComboBox Combo)
+        public void RecorrerInOrdenAsc(ComboBox Combo)
         {
-            
+            Combo.Items.Clear();
+            InOrdenAsc(Combo, Raiz);
 
         }
+
+        // Recorrer Descendente 
+
+        public void RecorrerInOrdenDesc(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            InOrdenDesc(Grilla, Raiz);
+
+
+        }
+
+        public void RecorrerInOrdenDesc(ListBox Lista)
+        {
+            Lista.Items.Clear();
+            InOrdenDesc(Lista, Raiz);
+
+        }
+
+        public void RecorrerInOrdenDesc(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            InOrdenDesc(Combo, Raiz);
+
+        }
+
+        // Recorrer PreOrden 
+
+        public void RecorrerPreOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrden(Grilla, Raiz);
+
+
+        }
+
+        public void RecorrerPreOrden(ListBox Lista)
+        {
+            Lista.Items.Clear();
+            PreOrden(Lista, Raiz);
+
+        }
+
+        public void RecorrerPreOrden(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            PreOrden(Combo, Raiz);
+
+        }
+
+        // Recorrer PostOrden
+
+        public void RecorrerPostOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PostOrden(Grilla, Raiz);
+
+
+        }
+
+        public void RecorrerPostOrden(ListBox Lista)
+        {
+            Lista.Items.Clear();
+            PostOrden(Lista, Raiz);
+
+        }
+
+        public void RecorrerPostOrden(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            PostOrden(Combo, Raiz);
+
+        }
+
+
+
+
+
+
+
+        // InOrden 
 
         // Cargar ListBox Asc-Desc
         public void InOrdenAsc(ListBox Lst , clsNodo Raiz)
@@ -102,7 +186,7 @@ namespace PryAriettiED2
                 InOrdenAsc(Lst, Raiz.Izquierdo);
             }
             Lst.Items.Add(Raiz.Codigo);
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
                 InOrdenAsc(Lst, Raiz.Derecho);
             }
@@ -111,14 +195,14 @@ namespace PryAriettiED2
 
         public void InOrdenDesc(ListBox Lst , clsNodo Raiz)
         {
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Lst, Raiz.Derecho);
+                InOrdenDesc(Lst, Raiz.Derecho);
             }
             Lst.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Lst, Raiz.Izquierdo);
+                InOrdenDesc(Lst, Raiz.Izquierdo);
             }
         }
 
@@ -132,7 +216,7 @@ namespace PryAriettiED2
                 InOrdenAsc(Comb, Raiz.Izquierdo);
             }
             Comb.Items.Add(Raiz.Codigo);
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
                 InOrdenAsc(Comb, Raiz.Derecho);
             }
@@ -141,14 +225,14 @@ namespace PryAriettiED2
 
         public void InOrdenDesc(ComboBox Comb, clsNodo Raiz)
         {
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Comb, Raiz.Derecho);
+                InOrdenDesc(Comb, Raiz.Derecho);
             }
             Comb.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Comb, Raiz.Izquierdo);
+                InOrdenDesc(Comb, Raiz.Izquierdo);
             }
         }
 
@@ -162,7 +246,7 @@ namespace PryAriettiED2
                 InOrdenAsc(Grilla, Raiz.Izquierdo);
             }
             Grilla.Rows.Add(Raiz.Codigo);
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
                 InOrdenAsc(Grilla, Raiz.Derecho);
             }
@@ -171,14 +255,14 @@ namespace PryAriettiED2
 
         public void InOrdenDesc(DataGridView Grilla, clsNodo Raiz)
         {
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Grilla, Raiz.Derecho);
+                InOrdenDesc(Grilla, Raiz.Derecho);
             }
             Grilla.Rows.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Grilla, Raiz.Izquierdo);
+                InOrdenDesc(Grilla, Raiz.Izquierdo);
             }
         }
 
@@ -189,11 +273,11 @@ namespace PryAriettiED2
             Lst.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Lst, Raiz.Izquierdo);
+                PreOrden(Lst, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Lst, Raiz.Derecho);
+                PreOrden(Lst, Raiz.Derecho);
             }
         }
 
@@ -202,11 +286,11 @@ namespace PryAriettiED2
             Combo.Items.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Combo, Raiz.Izquierdo);
+                PreOrden(Combo, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Combo, Raiz.Derecho);
+                PreOrden(Combo, Raiz.Derecho);
             }
         }
 
@@ -215,11 +299,11 @@ namespace PryAriettiED2
             Grilla.Rows.Add(Raiz.Codigo);
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Grilla, Raiz.Izquierdo);
+                PreOrden(Grilla, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Grilla, Raiz.Derecho);
+                PreOrden(Grilla, Raiz.Derecho);
             }
         }
 
@@ -229,11 +313,11 @@ namespace PryAriettiED2
             
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Lst, Raiz.Izquierdo);
+               PostOrden(Lst, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Lst, Raiz.Derecho);
+                PostOrden(Lst, Raiz.Derecho);
             }
             Lst.Items.Add(Raiz.Codigo);
         }
@@ -243,11 +327,11 @@ namespace PryAriettiED2
 
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Combo, Raiz.Izquierdo);
+                PostOrden(Combo, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Combo, Raiz.Derecho);
+                PostOrden(Combo, Raiz.Derecho);
             }
             Combo.Items.Add(Raiz.Codigo);
         }
@@ -257,11 +341,11 @@ namespace PryAriettiED2
 
             if (Raiz.Izquierdo != null)
             {
-                InOrdenAsc(Grilla, Raiz.Izquierdo);
+                PostOrden(Grilla, Raiz.Izquierdo);
             }
-            if (Raiz.Izquierdo != null)
+            if (Raiz.Derecho != null)
             {
-                InOrdenAsc(Grilla, Raiz.Derecho);
+                PostOrden(Grilla, Raiz.Derecho);
             }
             Grilla.Rows.Add(Raiz.Codigo);
         }

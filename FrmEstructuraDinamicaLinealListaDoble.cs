@@ -84,5 +84,10 @@ namespace PryAriettiED2
 
             }
         }
+
+        private void FrmEstructuraDinamicaLinealListaDoble_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
