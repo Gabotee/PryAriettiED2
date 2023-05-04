@@ -53,6 +53,7 @@
             this.rbPreOrden = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
+            this.tvMostrar = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
@@ -170,7 +171,7 @@
             // 
             // cmdAceptar
             // 
-            this.cmdAceptar.Location = new System.Drawing.Point(82, 118);
+            this.cmdAceptar.Location = new System.Drawing.Point(85, 103);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(97, 27);
             this.cmdAceptar.TabIndex = 2;
@@ -242,9 +243,9 @@
             this.mrcRecorrido.Controls.Add(this.rbPreOrden);
             this.mrcRecorrido.Controls.Add(this.radioButton2);
             this.mrcRecorrido.Controls.Add(this.rbOrdenAsc);
-            this.mrcRecorrido.Location = new System.Drawing.Point(589, 180);
+            this.mrcRecorrido.Location = new System.Drawing.Point(589, 12);
             this.mrcRecorrido.Name = "mrcRecorrido";
-            this.mrcRecorrido.Size = new System.Drawing.Size(125, 130);
+            this.mrcRecorrido.Size = new System.Drawing.Size(144, 155);
             this.mrcRecorrido.TabIndex = 20;
             this.mrcRecorrido.TabStop = false;
             this.mrcRecorrido.Text = "Recorrido";
@@ -252,7 +253,7 @@
             // rbPostOrden
             // 
             this.rbPostOrden.AutoSize = true;
-            this.rbPostOrden.Location = new System.Drawing.Point(0, 91);
+            this.rbPostOrden.Location = new System.Drawing.Point(6, 103);
             this.rbPostOrden.Name = "rbPostOrden";
             this.rbPostOrden.Size = new System.Drawing.Size(75, 17);
             this.rbPostOrden.TabIndex = 3;
@@ -264,7 +265,7 @@
             // rbPreOrden
             // 
             this.rbPreOrden.AutoSize = true;
-            this.rbPreOrden.Location = new System.Drawing.Point(0, 68);
+            this.rbPreOrden.Location = new System.Drawing.Point(6, 80);
             this.rbPreOrden.Name = "rbPreOrden";
             this.rbPreOrden.Size = new System.Drawing.Size(70, 17);
             this.rbPreOrden.TabIndex = 2;
@@ -276,7 +277,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(0, 46);
+            this.radioButton2.Location = new System.Drawing.Point(6, 58);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(127, 17);
             this.radioButton2.TabIndex = 1;
@@ -288,7 +289,7 @@
             // rbOrdenAsc
             // 
             this.rbOrdenAsc.AutoSize = true;
-            this.rbOrdenAsc.Location = new System.Drawing.Point(0, 23);
+            this.rbOrdenAsc.Location = new System.Drawing.Point(6, 35);
             this.rbOrdenAsc.Name = "rbOrdenAsc";
             this.rbOrdenAsc.Size = new System.Drawing.Size(120, 17);
             this.rbOrdenAsc.TabIndex = 0;
@@ -297,11 +298,19 @@
             this.rbOrdenAsc.UseVisualStyleBackColor = true;
             this.rbOrdenAsc.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // tvMostrar
+            // 
+            this.tvMostrar.Location = new System.Drawing.Point(595, 180);
+            this.tvMostrar.Name = "tvMostrar";
+            this.tvMostrar.Size = new System.Drawing.Size(192, 217);
+            this.tvMostrar.TabIndex = 21;
+            // 
             // FrmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 511);
+            this.ClientSize = new System.Drawing.Size(802, 507);
+            this.Controls.Add(this.tvMostrar);
             this.Controls.Add(this.mrcRecorrido);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -348,5 +357,6 @@
         private System.Windows.Forms.RadioButton rbPreOrden;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rbOrdenAsc;
+        private System.Windows.Forms.TreeView tvMostrar;
     }
 }

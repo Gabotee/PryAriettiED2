@@ -35,6 +35,8 @@ namespace PryAriettiED2
                 Persona.Codigo = Convert.ToInt32(txtCodigo.Text);
 
                 ObjArbol.Agregar(Persona);
+
+
                 ObjArbol.RecorrerInOrdenAsc(lstArbolBinario);
                 ObjArbol.RecorrerInOrdenAsc(DgvMostrar);
                 ObjArbol.RecorrerInOrdenAsc(lstCodigo);

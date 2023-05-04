@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryAriettiED2
 {
@@ -12,6 +13,10 @@ namespace PryAriettiED2
     {
 
         private clsNodo Inicio;
+        private clsNodo[] Vector = new clsNodo[100];
+        int I;
+        int Ini;
+        int Fin;
 
         public clsNodo Raiz
         {
@@ -69,6 +74,37 @@ namespace PryAriettiED2
 
         }
 
+        private void CargarVectorInOrden(clsNodo NodoPadre)
+        {
+            if (NodoPadre.Izquierdo != null)
+            {
+                CargarVectorInOrden(NodoPadre.Izquierdo);
+            }
+            Vector[I] = NodoPadre;
+            I = I + 1;
+            if (NodoPadre.Derecho != null)
+            {
+                CargarVectorInOrden(NodoPadre.Derecho);
+            }
+
+        }
+
+        public void Equilibrar(Int32 Ini, Int32 Fin)
+        {
+            Int32 Med = (Ini + Fin) / 2;
+
+            if (Ini <= Fin)
+            {
+                Agregar(Vector[Med]);
+                Equilibrar(Ini, Med - 1);
+                Equilibrar(Med + 1, Fin);
+
+            }
+
+        }
+
+        
+
 
         // InOrden I-R-D
         // PreOrden R-I-D
@@ -79,7 +115,6 @@ namespace PryAriettiED2
         {
             Grilla.Rows.Clear();
             InOrdenAsc(Grilla, Raiz);
-
 
         }
 
@@ -145,6 +180,12 @@ namespace PryAriettiED2
 
         }
 
+        public void RecorrerPreOrden(TreeView TreeArbol)
+        {
+            TreeArbol.Nodes.Clear();
+            PreOrden(TreeArbol.Nodes, Raiz);
+        }
+
         // Recorrer PostOrden
 
         public void RecorrerPostOrden(DataGridView Grilla)
@@ -168,10 +209,6 @@ namespace PryAriettiED2
             PostOrden(Combo, Raiz);
 
         }
-
-
-
-
 
 
 
@@ -245,11 +282,15 @@ namespace PryAriettiED2
             {
                 InOrdenAsc(Grilla, Raiz.Izquierdo);
             }
-            Grilla.Rows.Add(Raiz.Codigo);
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(Grilla, Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Derecho != null)
             {
                 InOrdenAsc(Grilla, Raiz.Derecho);
             }
+
+            
 
         }
 
@@ -259,12 +300,18 @@ namespace PryAriettiED2
             {
                 InOrdenDesc(Grilla, Raiz.Derecho);
             }
-            Grilla.Rows.Add(Raiz.Codigo);
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(Grilla, Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
             if (Raiz.Izquierdo != null)
             {
                 InOrdenDesc(Grilla, Raiz.Izquierdo);
             }
+            Grilla.Refresh();
+
         }
+
+
 
         // PreOrden 
 
@@ -296,7 +343,10 @@ namespace PryAriettiED2
 
         public void PreOrden(DataGridView Grilla, clsNodo Raiz)
         {
-            Grilla.Rows.Add(Raiz.Codigo);
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(Grilla, Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Refresh();
             if (Raiz.Izquierdo != null)
             {
                 PreOrden(Grilla, Raiz.Izquierdo);
@@ -305,7 +355,25 @@ namespace PryAriettiED2
             {
                 PreOrden(Grilla, Raiz.Derecho);
             }
+
+            
+
         }
+
+        public void PreOrden(TreeNodeCollection NodoPadre , clsNodo Raiz)
+        {
+            TreeNode Hijo = NodoPadre.Add(Raiz.Codigo.ToString());
+            if (Raiz.Izquierdo != null)
+            {
+                PreOrden(Hijo.Nodes, Raiz.Izquierdo);
+            }
+            if (Raiz.Derecho != null)
+            {
+                PreOrden(Hijo.Nodes, Raiz.Derecho);
+            }
+        }
+
+
 
         //PostOrden
         public void PostOrden(ListBox Lst, clsNodo Raiz)
@@ -347,7 +415,35 @@ namespace PryAriettiED2
             {
                 PostOrden(Grilla, Raiz.Derecho);
             }
-            Grilla.Rows.Add(Raiz.Codigo);
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(Grilla, Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Rows.Add(Raiz.Codigo, Raiz.Nombre, Raiz.Tramite);
+            Grilla.Refresh();
+
+
         }
+
+        
+
+        
+
+
+        // Equilibrar
+
+
+        //Declarar vector(Clase Nodo).. listar InOrden 
+        //Destruir Arbol.. Raiz = Null
+        //Metodo Agregar. 
+        // Indices Inicio + Final , Promedio 
+        // Le pasamos el promedio a la raiz 
+        // Variable Promedio -1 
+        // Repetir 
+
+        // Eliminar 
+
+        // Pasar todos los datos al vector menos el que quiero eliminar. 
+
+
+
     }
 }
