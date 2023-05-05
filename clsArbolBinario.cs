@@ -71,6 +71,14 @@ namespace PryAriettiED2
 
         }
 
+        public void Equilibrar()
+        {
+            I = 0;
+            CargarVectorInOrden(Raiz);
+            Raiz = null;
+            EquilibrarArbol(0, I - 1);
+        }
+
         private void CargarVectorInOrden(clsNodo NodoPadre)
         {
             if (NodoPadre.Izquierdo != null)
@@ -96,15 +104,15 @@ namespace PryAriettiED2
         // Variable Promedio -1 
         // Repetir 
 
-        public void Equilibrar(Int32 Ini, Int32 Fin)
+        public void EquilibrarArbol(Int32 Ini, Int32 Fin)
         {
             Int32 Med = (Ini + Fin) / 2;
 
             if (Ini <= Fin)
             {
                 Agregar(Vector[Med]);
-                Equilibrar(Ini, Med - 1);
-                Equilibrar(Med + 1, Fin);
+                EquilibrarArbol(Ini, Med - 1);
+                EquilibrarArbol(Med + 1, Fin);
 
             }
 

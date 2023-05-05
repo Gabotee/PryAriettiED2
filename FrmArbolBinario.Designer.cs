@@ -34,12 +34,14 @@
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tvMostrar = new System.Windows.Forms.TreeView();
             this.DgvMostrar = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstArbolBinario = new System.Windows.Forms.ListBox();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
+            this.btnEquilibrar = new System.Windows.Forms.Button();
             this.cmdAceptar = new System.Windows.Forms.Button();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.rbPreOrden = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
-            this.tvMostrar = new System.Windows.Forms.TreeView();
-            this.btnEquilibrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
@@ -114,6 +114,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado en una Lista y grilla";
             // 
+            // tvMostrar
+            // 
+            this.tvMostrar.Location = new System.Drawing.Point(523, 19);
+            this.tvMostrar.Name = "tvMostrar";
+            this.tvMostrar.Size = new System.Drawing.Size(179, 186);
+            this.tvMostrar.TabIndex = 21;
+            // 
             // DgvMostrar
             // 
             this.DgvMostrar.AllowUserToAddRows = false;
@@ -171,6 +178,16 @@
             this.mrcNuevoElemento.TabIndex = 17;
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
+            // 
+            // btnEquilibrar
+            // 
+            this.btnEquilibrar.Location = new System.Drawing.Point(101, 103);
+            this.btnEquilibrar.Name = "btnEquilibrar";
+            this.btnEquilibrar.Size = new System.Drawing.Size(81, 27);
+            this.btnEquilibrar.TabIndex = 6;
+            this.btnEquilibrar.Text = "Equilibrar";
+            this.btnEquilibrar.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
             // 
             // cmdAceptar
             // 
@@ -301,33 +318,18 @@
             this.rbOrdenAsc.UseVisualStyleBackColor = true;
             this.rbOrdenAsc.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // tvMostrar
-            // 
-            this.tvMostrar.Location = new System.Drawing.Point(523, 19);
-            this.tvMostrar.Name = "tvMostrar";
-            this.tvMostrar.Size = new System.Drawing.Size(179, 186);
-            this.tvMostrar.TabIndex = 21;
-            // 
-            // btnEquilibrar
-            // 
-            this.btnEquilibrar.Location = new System.Drawing.Point(101, 103);
-            this.btnEquilibrar.Name = "btnEquilibrar";
-            this.btnEquilibrar.Size = new System.Drawing.Size(81, 27);
-            this.btnEquilibrar.TabIndex = 6;
-            this.btnEquilibrar.Text = "Equilibrar";
-            this.btnEquilibrar.UseVisualStyleBackColor = true;
-            // 
             // FrmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 430);
+            this.ClientSize = new System.Drawing.Size(760, 430);
             this.Controls.Add(this.mrcRecorrido);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.mrcNuevoElemento);
             this.Controls.Add(this.pbImagen1);
             this.Name = "FrmArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arbol Binario";
             this.Load += new System.EventHandler(this.FrmArbolBinario_Load);
             this.groupBox1.ResumeLayout(false);

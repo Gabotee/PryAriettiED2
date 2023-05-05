@@ -82,5 +82,10 @@ namespace PryAriettiED2
         {
             
         }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

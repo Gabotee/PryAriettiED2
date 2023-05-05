@@ -60,8 +60,8 @@ namespace PryAriettiED2
 
         private void grafoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmGrafo VentanaGrafo = new FrmGrafo();
-            VentanaGrafo.ShowDialog();
+            //FrmGrafo VentanaGrafo = new FrmGrafo();
+            //VentanaGrafo.ShowDialog();
         }
     }
 }
