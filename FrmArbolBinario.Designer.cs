@@ -54,6 +54,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
             this.tvMostrar = new System.Windows.Forms.TreeView();
+            this.btnEquilibrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
@@ -103,11 +104,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tvMostrar);
             this.groupBox2.Controls.Add(this.DgvMostrar);
             this.groupBox2.Controls.Add(this.lstArbolBinario);
             this.groupBox2.Location = new System.Drawing.Point(13, 180);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(570, 217);
+            this.groupBox2.Size = new System.Drawing.Size(720, 217);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado en una Lista y grilla";
@@ -124,7 +126,7 @@
             this.DgvMostrar.Location = new System.Drawing.Point(164, 19);
             this.DgvMostrar.Name = "DgvMostrar";
             this.DgvMostrar.ReadOnly = true;
-            this.DgvMostrar.Size = new System.Drawing.Size(400, 186);
+            this.DgvMostrar.Size = new System.Drawing.Size(348, 186);
             this.DgvMostrar.TabIndex = 1;
             // 
             // Column1
@@ -155,6 +157,7 @@
             // 
             // mrcNuevoElemento
             // 
+            this.mrcNuevoElemento.Controls.Add(this.btnEquilibrar);
             this.mrcNuevoElemento.Controls.Add(this.cmdAceptar);
             this.mrcNuevoElemento.Controls.Add(this.txtTramite);
             this.mrcNuevoElemento.Controls.Add(this.txtNombre);
@@ -171,9 +174,9 @@
             // 
             // cmdAceptar
             // 
-            this.cmdAceptar.Location = new System.Drawing.Point(85, 103);
+            this.cmdAceptar.Location = new System.Drawing.Point(9, 103);
             this.cmdAceptar.Name = "cmdAceptar";
-            this.cmdAceptar.Size = new System.Drawing.Size(97, 27);
+            this.cmdAceptar.Size = new System.Drawing.Size(81, 27);
             this.cmdAceptar.TabIndex = 2;
             this.cmdAceptar.Text = "Agregar";
             this.cmdAceptar.UseVisualStyleBackColor = true;
@@ -300,17 +303,25 @@
             // 
             // tvMostrar
             // 
-            this.tvMostrar.Location = new System.Drawing.Point(595, 180);
+            this.tvMostrar.Location = new System.Drawing.Point(523, 19);
             this.tvMostrar.Name = "tvMostrar";
-            this.tvMostrar.Size = new System.Drawing.Size(192, 217);
+            this.tvMostrar.Size = new System.Drawing.Size(179, 186);
             this.tvMostrar.TabIndex = 21;
+            // 
+            // btnEquilibrar
+            // 
+            this.btnEquilibrar.Location = new System.Drawing.Point(101, 103);
+            this.btnEquilibrar.Name = "btnEquilibrar";
+            this.btnEquilibrar.Size = new System.Drawing.Size(81, 27);
+            this.btnEquilibrar.TabIndex = 6;
+            this.btnEquilibrar.Text = "Equilibrar";
+            this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
             // FrmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 507);
-            this.Controls.Add(this.tvMostrar);
+            this.ClientSize = new System.Drawing.Size(770, 430);
             this.Controls.Add(this.mrcRecorrido);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -358,5 +369,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton rbOrdenAsc;
         private System.Windows.Forms.TreeView tvMostrar;
+        private System.Windows.Forms.Button btnEquilibrar;
     }
 }

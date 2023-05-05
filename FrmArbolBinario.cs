@@ -40,6 +40,7 @@ namespace PryAriettiED2
                 ObjArbol.RecorrerInOrdenAsc(lstArbolBinario);
                 ObjArbol.RecorrerInOrdenAsc(DgvMostrar);
                 ObjArbol.RecorrerInOrdenAsc(lstCodigo);
+                ObjArbol.RecorrerPreOrden(tvMostrar);
 
                 txtNombre.Text = "";
                 txtCodigo.Text = "";

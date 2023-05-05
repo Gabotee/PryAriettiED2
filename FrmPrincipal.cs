@@ -57,5 +57,11 @@ namespace PryAriettiED2
             FrmArbolBinario VentanaArbol = new FrmArbolBinario();
             VentanaArbol.ShowDialog();
         }
+
+        private void grafoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGrafo VentanaGrafo = new FrmGrafo();
+            VentanaGrafo.ShowDialog();
+        }
     }
 }

@@ -15,8 +15,7 @@ namespace PryAriettiED2
         private clsNodo Inicio;
         private clsNodo[] Vector = new clsNodo[100];
         int I;
-        int Ini;
-        int Fin;
+       
 
         public clsNodo Raiz
         {
@@ -65,8 +64,6 @@ namespace PryAriettiED2
         }
 
 
-
-
         public void Eliminar(Int32 Cod)
         {
 
@@ -88,6 +85,16 @@ namespace PryAriettiED2
             }
 
         }
+
+        // Equilibrar
+
+        //Declarar vector(Clase Nodo).. listar InOrden 
+        //Destruir Arbol.. Raiz = Null
+        //Metodo Agregar. 
+        // Indices Inicio + Final , Promedio 
+        // Le pasamos el promedio a la raiz 
+        // Variable Promedio -1 
+        // Repetir 
 
         public void Equilibrar(Int32 Ini, Int32 Fin)
         {
@@ -424,26 +431,6 @@ namespace PryAriettiED2
         }
 
         
-
-        
-
-
-        // Equilibrar
-
-
-        //Declarar vector(Clase Nodo).. listar InOrden 
-        //Destruir Arbol.. Raiz = Null
-        //Metodo Agregar. 
-        // Indices Inicio + Final , Promedio 
-        // Le pasamos el promedio a la raiz 
-        // Variable Promedio -1 
-        // Repetir 
-
-        // Eliminar 
-
-        // Pasar todos los datos al vector menos el que quiero eliminar. 
-
-
 
     }
 }
