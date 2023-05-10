@@ -41,7 +41,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstArbolBinario = new System.Windows.Forms.ListBox();
             this.mrcNuevoElemento = new System.Windows.Forms.GroupBox();
-            this.btnEquilibrar = new System.Windows.Forms.Button();
             this.cmdAceptar = new System.Windows.Forms.Button();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -53,7 +52,7 @@
             this.mrcRecorrido = new System.Windows.Forms.GroupBox();
             this.rbPostOrden = new System.Windows.Forms.RadioButton();
             this.rbPreOrden = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbInOrdenDesc = new System.Windows.Forms.RadioButton();
             this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,24 +78,25 @@
             // 
             this.lstCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lstCodigo.FormattingEnabled = true;
-            this.lstCodigo.Location = new System.Drawing.Point(54, 27);
+            this.lstCodigo.Location = new System.Drawing.Point(53, 57);
             this.lstCodigo.Name = "lstCodigo";
             this.lstCodigo.Size = new System.Drawing.Size(121, 21);
             this.lstCodigo.TabIndex = 3;
             // 
             // cmdEliminar
             // 
-            this.cmdEliminar.Location = new System.Drawing.Point(68, 54);
+            this.cmdEliminar.Location = new System.Drawing.Point(64, 103);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(97, 27);
             this.cmdEliminar.TabIndex = 2;
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 27);
+            this.label6.Location = new System.Drawing.Point(7, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 0;
@@ -164,7 +164,6 @@
             // 
             // mrcNuevoElemento
             // 
-            this.mrcNuevoElemento.Controls.Add(this.btnEquilibrar);
             this.mrcNuevoElemento.Controls.Add(this.cmdAceptar);
             this.mrcNuevoElemento.Controls.Add(this.txtTramite);
             this.mrcNuevoElemento.Controls.Add(this.txtNombre);
@@ -179,19 +178,9 @@
             this.mrcNuevoElemento.TabStop = false;
             this.mrcNuevoElemento.Text = "Nuevo Elemento";
             // 
-            // btnEquilibrar
-            // 
-            this.btnEquilibrar.Location = new System.Drawing.Point(101, 103);
-            this.btnEquilibrar.Name = "btnEquilibrar";
-            this.btnEquilibrar.Size = new System.Drawing.Size(81, 27);
-            this.btnEquilibrar.TabIndex = 6;
-            this.btnEquilibrar.Text = "Equilibrar";
-            this.btnEquilibrar.UseVisualStyleBackColor = true;
-            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
-            // 
             // cmdAceptar
             // 
-            this.cmdAceptar.Location = new System.Drawing.Point(9, 103);
+            this.cmdAceptar.Location = new System.Drawing.Point(101, 103);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(81, 27);
             this.cmdAceptar.TabIndex = 2;
@@ -261,7 +250,7 @@
             // 
             this.mrcRecorrido.Controls.Add(this.rbPostOrden);
             this.mrcRecorrido.Controls.Add(this.rbPreOrden);
-            this.mrcRecorrido.Controls.Add(this.radioButton2);
+            this.mrcRecorrido.Controls.Add(this.rbInOrdenDesc);
             this.mrcRecorrido.Controls.Add(this.rbOrdenAsc);
             this.mrcRecorrido.Location = new System.Drawing.Point(589, 12);
             this.mrcRecorrido.Name = "mrcRecorrido";
@@ -294,21 +283,22 @@
             this.rbPreOrden.UseVisualStyleBackColor = true;
             this.rbPreOrden.CheckedChanged += new System.EventHandler(this.rbPreOrden_CheckedChanged);
             // 
-            // radioButton2
+            // rbInOrdenDesc
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 58);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(127, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "InOrdenDescendente";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.rbInOrdenDesc.AutoSize = true;
+            this.rbInOrdenDesc.Location = new System.Drawing.Point(6, 58);
+            this.rbInOrdenDesc.Name = "rbInOrdenDesc";
+            this.rbInOrdenDesc.Size = new System.Drawing.Size(127, 17);
+            this.rbInOrdenDesc.TabIndex = 1;
+            this.rbInOrdenDesc.TabStop = true;
+            this.rbInOrdenDesc.Text = "InOrdenDescendente";
+            this.rbInOrdenDesc.UseVisualStyleBackColor = true;
+            this.rbInOrdenDesc.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rbOrdenAsc
             // 
             this.rbOrdenAsc.AutoSize = true;
+            this.rbOrdenAsc.Checked = true;
             this.rbOrdenAsc.Location = new System.Drawing.Point(6, 35);
             this.rbOrdenAsc.Name = "rbOrdenAsc";
             this.rbOrdenAsc.Size = new System.Drawing.Size(120, 17);
@@ -368,9 +358,8 @@
         private System.Windows.Forms.GroupBox mrcRecorrido;
         private System.Windows.Forms.RadioButton rbPostOrden;
         private System.Windows.Forms.RadioButton rbPreOrden;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbInOrdenDesc;
         private System.Windows.Forms.RadioButton rbOrdenAsc;
         private System.Windows.Forms.TreeView tvMostrar;
-        private System.Windows.Forms.Button btnEquilibrar;
     }
 }

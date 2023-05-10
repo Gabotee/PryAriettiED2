@@ -15,6 +15,7 @@ namespace PryAriettiED2
         private clsNodo Inicio;
         private clsNodo[] Vector = new clsNodo[100];
         int I;
+        int EliminarNodo;
        
 
         public clsNodo Raiz
@@ -63,21 +64,25 @@ namespace PryAriettiED2
 
         }
 
-
-        public void Eliminar(Int32 Cod)
-        {
-
-
-
-        }
-
         public void Equilibrar()
         {
+            EliminarNodo = default;
             I = 0;
             CargarVectorInOrden(Raiz);
             Raiz = null;
             EquilibrarArbol(0, I - 1);
         }
+
+        public void Eliminar(int Nodo)
+        {
+            EliminarNodo = Nodo;
+            I = 0;
+            CargarVectorInOrden(Raiz);
+            Raiz = null;
+            EquilibrarArbol(0, I - 1);
+        }
+
+        
 
         private void CargarVectorInOrden(clsNodo NodoPadre)
         {
@@ -85,8 +90,11 @@ namespace PryAriettiED2
             {
                 CargarVectorInOrden(NodoPadre.Izquierdo);
             }
-            Vector[I] = NodoPadre;
-            I = I + 1;
+            if (NodoPadre.Codigo != EliminarNodo)
+            {
+                Vector[I] = NodoPadre;
+                I = I + 1;
+            }
             if (NodoPadre.Derecho != null)
             {
                 CargarVectorInOrden(NodoPadre.Derecho);
@@ -119,8 +127,6 @@ namespace PryAriettiED2
         }
 
         
-
-
         // InOrden I-R-D
         // PreOrden R-I-D
         // PostOrden I-D-R
@@ -147,6 +153,11 @@ namespace PryAriettiED2
 
         }
 
+        public void RecorrerInOrdenAsc(StreamWriter Archivo)
+        {
+            InOrdenAcs(Archivo, Raiz);
+        }
+
         // Recorrer Descendente 
 
         public void RecorrerInOrdenDesc(DataGridView Grilla)
@@ -169,6 +180,11 @@ namespace PryAriettiED2
             Combo.Items.Clear();
             InOrdenDesc(Combo, Raiz);
 
+        }
+
+        public void RecorrerInOrdenDesc(StreamWriter Archivo)
+        {
+            InOrdenDesc(Archivo, Raiz);
         }
 
         // Recorrer PreOrden 
@@ -201,6 +217,11 @@ namespace PryAriettiED2
             PreOrden(TreeArbol.Nodes, Raiz);
         }
 
+        public void RecorrerPreOrden(StreamWriter Archivo)
+        {
+            PreOrden(Archivo, Raiz);
+        }
+
         // Recorrer PostOrden
 
         public void RecorrerPostOrden(DataGridView Grilla)
@@ -223,6 +244,11 @@ namespace PryAriettiED2
             Combo.Items.Clear();
             PostOrden(Combo, Raiz);
 
+        }
+
+        public void RecorrerPostOrden(StreamWriter Archivo)
+        {
+            PostOrden(Archivo, Raiz);
         }
 
 
@@ -326,7 +352,29 @@ namespace PryAriettiED2
 
         }
 
+        // Cargar Archivo CSV Asc-Desc
 
+        private void InOrdenAcs(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Izquierdo != null) InOrdenAcs(Writer, Raiz.Izquierdo);
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+            if (Raiz.Derecho != null) InOrdenAcs(Writer, Raiz.Derecho);
+        }
+
+        private void InOrdenDesc(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Derecho != null) InOrdenDesc(Writer, Raiz.Derecho);
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+            if (Raiz.Izquierdo != null) InOrdenDesc(Writer, Raiz.Izquierdo);
+        }
 
         // PreOrden 
 
@@ -388,7 +436,16 @@ namespace PryAriettiED2
             }
         }
 
-
+        private void PreOrden(StreamWriter Writer, clsNodo Raiz)
+        {
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+            if (Raiz.Izquierdo != null) PreOrden(Writer, Raiz.Izquierdo);
+            if (Raiz.Derecho != null) PreOrden(Writer, Raiz.Derecho);
+        }
 
         //PostOrden
         public void PostOrden(ListBox Lst, clsNodo Raiz)
@@ -438,7 +495,16 @@ namespace PryAriettiED2
 
         }
 
-        
+        private void PostOrden(StreamWriter Writer, clsNodo Raiz)
+        {
+            if (Raiz.Izquierdo != null) PostOrden(Writer, Raiz.Izquierdo);
+            if (Raiz.Derecho != null) PostOrden(Writer, Raiz.Derecho);
+            Writer.Write(Raiz.Codigo);
+            Writer.Write(";");
+            Writer.Write(Raiz.Nombre);
+            Writer.Write(";");
+            Writer.WriteLine(Raiz.Tramite);
+        }
 
     }
 }
