@@ -126,7 +126,23 @@ namespace PryAriettiED2
 
         }
 
-        
+        public clsNodo DatosNodotv(int DatosNodo)
+        {
+            clsNodo Aux = Raiz;
+            while (Aux.Codigo != DatosNodo)
+            {
+                if (DatosNodo < Aux.Codigo)
+                {
+                    Aux = Aux.Izquierdo;
+                }
+                else
+                {
+                    Aux = Aux.Derecho;
+                }
+            }
+            return Aux;
+        }
+
         // InOrden I-R-D
         // PreOrden R-I-D
         // PostOrden I-D-R

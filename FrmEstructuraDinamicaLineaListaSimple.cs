@@ -72,5 +72,11 @@ namespace PryAriettiED2
 
 
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidacion Numero = new ClsValidacion();
+            Numero.SoloNumeros(e);
+        }
     }
 }

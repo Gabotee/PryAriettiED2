@@ -139,6 +139,9 @@ namespace PryAriettiED2
                     lstCodigo.Items.Clear();
                     lstArbolBinario.Items.Clear();
                     tvMostrar.Nodes.Clear();
+                    txtCodigoTv.Text = "";
+                    txtNombretv.Text = "";
+                    txtTramiteTv.Text = "";
                 }
 
                 
@@ -181,6 +184,27 @@ namespace PryAriettiED2
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ClsValidacion Numero = new ClsValidacion();
+            Numero.SoloNumeros(e);
+        }
+
+        private void tvMostrar_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            clsNodo InfoNodo = ObjArbol.DatosNodotv(Convert.ToInt32(e.Node.Text));
+            txtCodigoTv.Text = InfoNodo.Codigo.ToString();
+            txtNombretv.Text = InfoNodo.Nombre;
+            txtTramiteTv.Text = InfoNodo.Tramite;
+            tvMostrar.ExpandAll();
+
             
+        }
     }
 }

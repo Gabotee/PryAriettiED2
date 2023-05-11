@@ -54,6 +54,12 @@
             this.rbPreOrden = new System.Windows.Forms.RadioButton();
             this.rbInOrdenDesc = new System.Windows.Forms.RadioButton();
             this.rbOrdenAsc = new System.Windows.Forms.RadioButton();
+            this.txtNombretv = new System.Windows.Forms.TextBox();
+            this.txtCodigoTv = new System.Windows.Forms.TextBox();
+            this.txtTramiteTv = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).BeginInit();
@@ -69,7 +75,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(383, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 155);
+            this.groupBox1.Size = new System.Drawing.Size(200, 159);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Elemento Eliminado";
@@ -104,22 +110,30 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtNombretv);
+            this.groupBox2.Controls.Add(this.txtTramiteTv);
             this.groupBox2.Controls.Add(this.tvMostrar);
+            this.groupBox2.Controls.Add(this.txtCodigoTv);
             this.groupBox2.Controls.Add(this.DgvMostrar);
             this.groupBox2.Controls.Add(this.lstArbolBinario);
             this.groupBox2.Location = new System.Drawing.Point(13, 180);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(720, 217);
+            this.groupBox2.Size = new System.Drawing.Size(720, 315);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado en una Lista y grilla";
             // 
             // tvMostrar
             // 
-            this.tvMostrar.Location = new System.Drawing.Point(523, 19);
+            this.tvMostrar.Location = new System.Drawing.Point(6, 19);
             this.tvMostrar.Name = "tvMostrar";
-            this.tvMostrar.Size = new System.Drawing.Size(179, 186);
+            this.tvMostrar.Size = new System.Drawing.Size(179, 181);
             this.tvMostrar.TabIndex = 21;
+            this.tvMostrar.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvMostrar_NodeMouseDoubleClick);
             // 
             // DgvMostrar
             // 
@@ -130,10 +144,10 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.DgvMostrar.Location = new System.Drawing.Point(164, 19);
+            this.DgvMostrar.Location = new System.Drawing.Point(358, 19);
             this.DgvMostrar.Name = "DgvMostrar";
             this.DgvMostrar.ReadOnly = true;
-            this.DgvMostrar.Size = new System.Drawing.Size(348, 186);
+            this.DgvMostrar.Size = new System.Drawing.Size(344, 277);
             this.DgvMostrar.TabIndex = 1;
             // 
             // Column1
@@ -157,9 +171,9 @@
             // lstArbolBinario
             // 
             this.lstArbolBinario.FormattingEnabled = true;
-            this.lstArbolBinario.Location = new System.Drawing.Point(17, 19);
+            this.lstArbolBinario.Location = new System.Drawing.Point(191, 19);
             this.lstArbolBinario.Name = "lstArbolBinario";
-            this.lstArbolBinario.Size = new System.Drawing.Size(120, 186);
+            this.lstArbolBinario.Size = new System.Drawing.Size(161, 277);
             this.lstArbolBinario.TabIndex = 0;
             // 
             // mrcNuevoElemento
@@ -208,6 +222,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(69, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label3
             // 
@@ -254,7 +269,7 @@
             this.mrcRecorrido.Controls.Add(this.rbOrdenAsc);
             this.mrcRecorrido.Location = new System.Drawing.Point(589, 12);
             this.mrcRecorrido.Name = "mrcRecorrido";
-            this.mrcRecorrido.Size = new System.Drawing.Size(144, 155);
+            this.mrcRecorrido.Size = new System.Drawing.Size(144, 159);
             this.mrcRecorrido.TabIndex = 20;
             this.mrcRecorrido.TabStop = false;
             this.mrcRecorrido.Text = "Recorrido";
@@ -308,11 +323,65 @@
             this.rbOrdenAsc.UseVisualStyleBackColor = true;
             this.rbOrdenAsc.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // txtNombretv
+            // 
+            this.txtNombretv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombretv.Location = new System.Drawing.Point(65, 250);
+            this.txtNombretv.Name = "txtNombretv";
+            this.txtNombretv.ReadOnly = true;
+            this.txtNombretv.Size = new System.Drawing.Size(120, 20);
+            this.txtNombretv.TabIndex = 6;
+            // 
+            // txtCodigoTv
+            // 
+            this.txtCodigoTv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigoTv.Location = new System.Drawing.Point(65, 224);
+            this.txtCodigoTv.Name = "txtCodigoTv";
+            this.txtCodigoTv.ReadOnly = true;
+            this.txtCodigoTv.Size = new System.Drawing.Size(120, 20);
+            this.txtCodigoTv.TabIndex = 7;
+            // 
+            // txtTramiteTv
+            // 
+            this.txtTramiteTv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTramiteTv.Location = new System.Drawing.Point(65, 276);
+            this.txtTramiteTv.Name = "txtTramiteTv";
+            this.txtTramiteTv.ReadOnly = true;
+            this.txtTramiteTv.Size = new System.Drawing.Size(120, 20);
+            this.txtTramiteTv.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Tramite";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Nombre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Codigo";
+            // 
             // FrmArbolBinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 430);
+            this.ClientSize = new System.Drawing.Size(757, 525);
             this.Controls.Add(this.mrcRecorrido);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -325,6 +394,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMostrar)).EndInit();
             this.mrcNuevoElemento.ResumeLayout(false);
             this.mrcNuevoElemento.PerformLayout();
@@ -332,6 +402,7 @@
             this.mrcRecorrido.ResumeLayout(false);
             this.mrcRecorrido.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,5 +432,11 @@
         private System.Windows.Forms.RadioButton rbInOrdenDesc;
         private System.Windows.Forms.RadioButton rbOrdenAsc;
         private System.Windows.Forms.TreeView tvMostrar;
+        private System.Windows.Forms.TextBox txtNombretv;
+        private System.Windows.Forms.TextBox txtTramiteTv;
+        private System.Windows.Forms.TextBox txtCodigoTv;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }

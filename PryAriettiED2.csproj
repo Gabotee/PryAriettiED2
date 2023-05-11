@@ -51,6 +51,7 @@
     <Compile Include="clsListaDoble.cs" />
     <Compile Include="clsListaSimple.cs" />
     <Compile Include="clsPila.cs" />
+    <Compile Include="ClsValidacion.cs" />
     <Compile Include="FrmArbolBinario.cs">
       <SubType>Form</SubType>
     </Compile>
