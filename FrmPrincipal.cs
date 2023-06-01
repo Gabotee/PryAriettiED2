@@ -63,5 +63,11 @@ namespace PryAriettiED2
             //FrmGrafo VentanaGrafo = new FrmGrafo();
             //VentanaGrafo.ShowDialog();
         }
+
+        private void operacionesConBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOperacionesBaseDeDatos ObjVentana = new FrmOperacionesBaseDeDatos();
+            ObjVentana.ShowDialog();
+        }
     }
 }

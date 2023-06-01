@@ -42,6 +42,8 @@
             this.noLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacionesConBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sistemaToolStripMenuItem,
             this.linealesToolStripMenuItem,
-            this.noLinealesToolStripMenuItem});
+            this.noLinealesToolStripMenuItem,
+            this.baseDeDatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(687, 24);
@@ -93,14 +96,14 @@
             // pilaToolStripMenuItem
             // 
             this.pilaToolStripMenuItem.Name = "pilaToolStripMenuItem";
-            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pilaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.pilaToolStripMenuItem.Text = "Pila";
             this.pilaToolStripMenuItem.Click += new System.EventHandler(this.pilaToolStripMenuItem_Click);
             // 
             // colaToolStripMenuItem
             // 
             this.colaToolStripMenuItem.Name = "colaToolStripMenuItem";
-            this.colaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.colaToolStripMenuItem.Text = "Cola";
             this.colaToolStripMenuItem.Click += new System.EventHandler(this.colaToolStripMenuItem_Click);
             // 
@@ -110,7 +113,7 @@
             this.simpleToolStripMenuItem,
             this.dobleToolStripMenuItem});
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.listaToolStripMenuItem.Text = "Lista";
             // 
             // simpleToolStripMenuItem
@@ -150,6 +153,21 @@
             this.grafoToolStripMenuItem.Text = "Grafo";
             this.grafoToolStripMenuItem.Click += new System.EventHandler(this.grafoToolStripMenuItem_Click);
             // 
+            // baseDeDatosToolStripMenuItem
+            // 
+            this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operacionesConBaseDeDatosToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
+            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
+            // 
+            // operacionesConBaseDeDatosToolStripMenuItem
+            // 
+            this.operacionesConBaseDeDatosToolStripMenuItem.Name = "operacionesConBaseDeDatosToolStripMenuItem";
+            this.operacionesConBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.operacionesConBaseDeDatosToolStripMenuItem.Text = "Operaciones con base de datos";
+            this.operacionesConBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.operacionesConBaseDeDatosToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +203,8 @@
         private System.Windows.Forms.ToolStripMenuItem dobleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arbolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operacionesConBaseDeDatosToolStripMenuItem;
     }
 }
 
