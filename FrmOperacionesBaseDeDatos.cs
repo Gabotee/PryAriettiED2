@@ -66,6 +66,19 @@ namespace PryAriettiED2
             ObjB.Listar(dgvMostrar, Sql);
         }
 
+        private void FrmOperacionesBaseDeDatos_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDiferencia_Click(object sender, EventArgs e)
+        {
+            string Sql = "SELECT * FROM Libro WHERE idIdioma = 2" +
+                " and idLibro not in " +
+                "(SELECT idLibro FROM Libro WHERE idpais = 3)";
+            ObjB.Listar(dgvMostrar, Sql);
+        }
+
 
         // Interseccion.. 
     }

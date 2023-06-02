@@ -30,9 +30,9 @@
         {
             this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnProyeccionSimple = new System.Windows.Forms.Button();
-            this.btnProyeccionMultiatributo = new System.Windows.Forms.Button();
             this.btnJuntar = new System.Windows.Forms.Button();
+            this.btnProyeccionMultiatributo = new System.Windows.Forms.Button();
+            this.btnProyeccionSimple = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSeleccionPorConvulacion = new System.Windows.Forms.Button();
             this.btnSeleccionMultiatributo = new System.Windows.Forms.Button();
@@ -67,15 +67,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operaciones de Proyeccion";
             // 
-            // btnProyeccionSimple
+            // btnJuntar
             // 
-            this.btnProyeccionSimple.Location = new System.Drawing.Point(6, 19);
-            this.btnProyeccionSimple.Name = "btnProyeccionSimple";
-            this.btnProyeccionSimple.Size = new System.Drawing.Size(254, 23);
-            this.btnProyeccionSimple.TabIndex = 2;
-            this.btnProyeccionSimple.Text = "Proyeccion Simple";
-            this.btnProyeccionSimple.UseVisualStyleBackColor = true;
-            this.btnProyeccionSimple.Click += new System.EventHandler(this.btnProyeccionSimple_Click);
+            this.btnJuntar.Location = new System.Drawing.Point(6, 77);
+            this.btnJuntar.Name = "btnJuntar";
+            this.btnJuntar.Size = new System.Drawing.Size(254, 23);
+            this.btnJuntar.TabIndex = 4;
+            this.btnJuntar.Text = "Juntar";
+            this.btnJuntar.UseVisualStyleBackColor = true;
             // 
             // btnProyeccionMultiatributo
             // 
@@ -87,14 +86,15 @@
             this.btnProyeccionMultiatributo.UseVisualStyleBackColor = true;
             this.btnProyeccionMultiatributo.Click += new System.EventHandler(this.btnProyeccionMultiatributo_Click);
             // 
-            // btnJuntar
+            // btnProyeccionSimple
             // 
-            this.btnJuntar.Location = new System.Drawing.Point(6, 77);
-            this.btnJuntar.Name = "btnJuntar";
-            this.btnJuntar.Size = new System.Drawing.Size(254, 23);
-            this.btnJuntar.TabIndex = 4;
-            this.btnJuntar.Text = "Juntar";
-            this.btnJuntar.UseVisualStyleBackColor = true;
+            this.btnProyeccionSimple.Location = new System.Drawing.Point(6, 19);
+            this.btnProyeccionSimple.Name = "btnProyeccionSimple";
+            this.btnProyeccionSimple.Size = new System.Drawing.Size(254, 23);
+            this.btnProyeccionSimple.TabIndex = 2;
+            this.btnProyeccionSimple.Text = "Proyeccion Simple";
+            this.btnProyeccionSimple.UseVisualStyleBackColor = true;
+            this.btnProyeccionSimple.Click += new System.EventHandler(this.btnProyeccionSimple_Click);
             // 
             // groupBox2
             // 
@@ -158,6 +158,7 @@
             this.btnDiferencia.TabIndex = 4;
             this.btnDiferencia.Text = "Diferencia";
             this.btnDiferencia.UseVisualStyleBackColor = true;
+            this.btnDiferencia.Click += new System.EventHandler(this.btnDiferencia_Click);
             // 
             // btnInterseccion
             // 
@@ -191,6 +192,7 @@
             this.Name = "FrmOperacionesBaseDeDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base De Datos";
+            this.Load += new System.EventHandler(this.FrmOperacionesBaseDeDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
