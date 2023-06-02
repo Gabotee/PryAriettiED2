@@ -75,6 +75,7 @@
             this.btnJuntar.TabIndex = 4;
             this.btnJuntar.Text = "Juntar";
             this.btnJuntar.UseVisualStyleBackColor = true;
+            this.btnJuntar.Click += new System.EventHandler(this.btnJuntar_Click);
             // 
             // btnProyeccionMultiatributo
             // 
@@ -116,6 +117,7 @@
             this.btnSeleccionPorConvulacion.TabIndex = 4;
             this.btnSeleccionPorConvulacion.Text = "Seleccion Por Convolucion";
             this.btnSeleccionPorConvulacion.UseVisualStyleBackColor = true;
+            this.btnSeleccionPorConvulacion.Click += new System.EventHandler(this.btnSeleccionPorConvulacion_Click);
             // 
             // btnSeleccionMultiatributo
             // 

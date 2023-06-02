@@ -63,6 +63,12 @@
     <Compile Include="FrmArbolBinario.Designer.cs">
       <DependentUpon>FrmArbolBinario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBaseDeDatosConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseDeDatosConsulta.Designer.cs">
+      <DependentUpon>FrmBaseDeDatosConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEstructuraDinamicaLinealCola.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmArbolBinario.resx">
       <DependentUpon>FrmArbolBinario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaseDeDatosConsulta.resx">
+      <DependentUpon>FrmBaseDeDatosConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEstructuraDinamicaLinealCola.resx">
       <DependentUpon>FrmEstructuraDinamicaLinealCola.cs</DependentUpon>

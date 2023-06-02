@@ -69,5 +69,11 @@ namespace PryAriettiED2
             FrmOperacionesBaseDeDatos ObjVentana = new FrmOperacionesBaseDeDatos();
             ObjVentana.ShowDialog();
         }
+
+        private void consultaSQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBaseDeDatosConsulta ObjVentana = new FrmBaseDeDatosConsulta();
+            ObjVentana.ShowDialog();
+        }
     }
 }

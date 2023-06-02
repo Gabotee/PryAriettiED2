@@ -61,7 +61,7 @@ namespace PryAriettiED2
         private void btnInterseccion_Click(object sender, EventArgs e)
         {
             string Sql = "SELECT * FROM Libro WHERE idIdioma = 2" +
-                " and exists " +
+                " and in " +
                 "(SELECT * FROM Libro WHERE idIdioma = 7)";
             ObjB.Listar(dgvMostrar, Sql);
         }
@@ -79,7 +79,26 @@ namespace PryAriettiED2
             ObjB.Listar(dgvMostrar, Sql);
         }
 
+        private void btnSeleccionPorConvulacion_Click(object sender, EventArgs e)
+        {
+            string Sql = "SELECT * FROM (select * from libro Where idautor = 4 ) as x Where ididioma = 1 ";
 
-        // Interseccion.. 
+            ObjB.Listar(dgvMostrar, Sql);
+        }
+
+        private void btnJuntar_Click(object sender, EventArgs e)
+        {
+            string Sql = "SELECT Titulo, Nombre FROM libro, Pais  Where Libro.idlibro = Pais.IdPais ";
+              
+            //string Sql = "SELECT Titulo, Nombre " +
+            //    "FROM libro on inner join " +
+            //    "(on Libro.idlibro = Pais.IdPais ";
+
+            ObjB.Listar(dgvMostrar, Sql);
+        }
+
+
+        // seleccion = trabajan con filas 
+        // Proyeccion = proyectan tablas 
     }
 }

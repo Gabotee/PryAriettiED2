@@ -46,6 +46,7 @@ namespace PryAriettiED2
             {
 
                 MessageBox.Show(ex.Message);
+                conexion.Close();
             }
         }
 
@@ -74,6 +75,7 @@ namespace PryAriettiED2
             {
 
                 MessageBox.Show(ex.Message);
+                conexion.Close();
             }
 
         }

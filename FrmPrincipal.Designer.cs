@@ -44,6 +44,7 @@
             this.grafoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operacionesConBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaSQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,7 +157,8 @@
             // baseDeDatosToolStripMenuItem
             // 
             this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operacionesConBaseDeDatosToolStripMenuItem});
+            this.operacionesConBaseDeDatosToolStripMenuItem,
+            this.consultaSQLToolStripMenuItem});
             this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
             this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
@@ -167,6 +169,13 @@
             this.operacionesConBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.operacionesConBaseDeDatosToolStripMenuItem.Text = "Operaciones con base de datos";
             this.operacionesConBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.operacionesConBaseDeDatosToolStripMenuItem_Click);
+            // 
+            // consultaSQLToolStripMenuItem
+            // 
+            this.consultaSQLToolStripMenuItem.Name = "consultaSQLToolStripMenuItem";
+            this.consultaSQLToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.consultaSQLToolStripMenuItem.Text = "Consulta SQL";
+            this.consultaSQLToolStripMenuItem.Click += new System.EventHandler(this.consultaSQLToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -205,6 +214,7 @@
         private System.Windows.Forms.ToolStripMenuItem grafoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem operacionesConBaseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaSQLToolStripMenuItem;
     }
 }
 
