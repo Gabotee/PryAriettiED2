@@ -52,15 +52,15 @@ namespace PryAriettiED2
 
         private void btnUnion_Click(object sender, EventArgs e)
         {
-            string Sql = "SELECT * FROM Libro WHERE idIdioma = 2" + 
-                " Union " + 
+            string Sql = "SELECT * FROM Libro WHERE idIdioma = 2" +
+                " Union "  +
                 "SELECT * FROM Libro WHERE idIdioma = 7";
             ObjB.Listar(dgvMostrar, Sql);
         }
 
         private void btnInterseccion_Click(object sender, EventArgs e)
         {
-            string Sql = "SELECT * FROM Libro WHERE idIdioma = 2" +
+            string Sql = "SELECT * FROM Libro WHERE idIdioma = 2 " +
                 " and in " +
                 "(SELECT * FROM Libro WHERE idIdioma = 7)";
             ObjB.Listar(dgvMostrar, Sql);
