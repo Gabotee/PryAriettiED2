@@ -68,15 +68,13 @@ namespace PryAriettiED2
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 case "7":
-                    txtCodigoSQL.Text = "Interseccion,";
-                    SQL = "SELECT * FROM Libro WHERE idIdioma = 2 and idlibro in (Select * from libro WHERE idIdioma = 7)";
+                    txtCodigoSQL.Text = "Interseccion";
+                    SQL = "SELECT * FROM Libro where idIdioma = 2 AND exists (SELECT * FROM Libro where idAutor = 1) ORDER BY 1 ASC";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
-                case "8":
+                case "8": 
                     txtCodigoSQL.Text = "Diferencia";
-                    SQL = "SELECT * FROM Libro WHERE idIdioma = 2" +
-                          " and idLibro not in " +
-                          "(SELECT idLibro FROM Libro WHERE idpais = 3)";
+                    SQL = "SELECT * FROM Libro where idIdioma = 2 AND idLibro not in (SELECT idLibro FROM Libro where idAutor = 83) ORDER BY 1 ASC";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 default:
