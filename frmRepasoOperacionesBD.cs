@@ -27,12 +27,12 @@ namespace PryAriettiED2
             switch (Operacion)
             {
                 case "0":
-                    txtCodigoSQL.Text = "Listar Todos los titulos del Libro";
+                    txtCodigoSQL.Text = "Proyeccion Simple, En este caso me proyecta todos los titulos de la tabla libro";
                     SQL = "SELECT Titulo FROM Libro";
                     ObjB.Listar(dgvMostrar,SQL);
                     break;
                 case "1":
-                    txtCodigoSQL.Text = "Listar Todas las columnas del Libro";
+                    txtCodigoSQL.Text = "Proyeccion MultiAtributo, En este caso me Listar Todas las columnas de la tabla Libro";
                     SQL = "SELECT * FROM Libro";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
@@ -44,7 +44,7 @@ namespace PryAriettiED2
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 case "3":
-                    txtCodigoSQL.Text = "Seleccion simple, Muestran todas las columnas de Libro en donde se cumpla la condicion WHERE, en este caso es idlibro >20";
+                    txtCodigoSQL.Text = "Seleccion Simple , Muestran todas las columnas de Libro en donde se cumpla la condicion WHERE, en este caso es idlibro >20";
                     SQL = "SELECT * FROM Libro WHERE idlibro > 20";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
@@ -60,20 +60,19 @@ namespace PryAriettiED2
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 case "6":
-                    txtCodigoSQL.Text = "Union, Une las tablas elejidas Usando el operador UNION, donde se cumpla la condicion WHERE " +
-                        "Ejemplo : Select * from libro WHERE idIdioma = 2 Union select * from libro Where idIdioma = 7";
+                    txtCodigoSQL.Text = "Union, La unión de dos conjuntos es el conjunto que contiene todos los elementos que pertenecen a uno de los conjuntos o a ambos conjuntos , donde se cumpla la condicion WHERE ";
                     SQL = "SELECT * FROM Libro WHERE idIdioma = 2" +
                           " Union " +
                           "SELECT * FROM Libro WHERE idIdioma = 7";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 case "7":
-                    txtCodigoSQL.Text = "Interseccion";
-                    SQL = "SELECT * FROM Libro where idIdioma = 2 AND exists (SELECT * FROM Libro where idAutor = 1) ORDER BY 1 ASC";
+                    txtCodigoSQL.Text = "Interseccion, es el conjunto de elementos que son comunes a ambos conjuntos.";
+                    SQL = "SELECT * FROM Libro where idIdioma = 2 AND exists (SELECT * FROM Libro where idAutor = 5) ORDER BY 5 ASC";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
                 case "8": 
-                    txtCodigoSQL.Text = "Diferencia";
+                    txtCodigoSQL.Text = "Diferencia ,La diferencia de dos conjuntos es el conjunto de elementos que pertenecen a uno de los conjuntos pero no al otro.";
                     SQL = "SELECT * FROM Libro where idIdioma = 2 AND idLibro not in (SELECT idLibro FROM Libro where idAutor = 83) ORDER BY 1 ASC";
                     ObjB.Listar(dgvMostrar, SQL);
                     break;
